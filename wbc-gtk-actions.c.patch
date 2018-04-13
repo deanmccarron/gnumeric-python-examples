@@ -1,0 +1,20 @@
+--- gnumeric-1.12.32/src/wbc-gtk-actions.c	2015-12-10 15:04:24.000000000 -0700
++++ gnumeric-patched/src/wbc-gtk-actions.c	2017-03-07 10:22:38.894904880 -0700
+@@ -2077,7 +2077,7 @@
+ 	  .label = N_("S_heet")
+ 	},
+ 	{ .name = "MenuEditSelect",
+-	  .label = N_("_Select")
++	  .label = N_("S_elect")
+ 	},
+ 
+ 	{ .name = "EditCopy",
+@@ -2580,7 +2580,7 @@
+ 	},
+ 	{ .name = "EditPasteSpecial",
+ 	  .icon = "edit-paste",
+-	  .label = N_("P_aste Special..."),
++	  .label = N_("Paste _Special..."),
+ 	  .accelerator = "<shift><control>v",
+ 	  .tooltip = N_("Paste with optional filters and transformations"),
+ 	  .callback = G_CALLBACK (cb_edit_paste_special)

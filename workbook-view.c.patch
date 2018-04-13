@@ -1,0 +1,29 @@
+--- gnumeric-1.12.32/src/workbook-view.c	2015-03-30 14:13:58.000000000 -0700
++++ gnumeric-patched/src/workbook-view.c	2017-04-02 06:17:43.609877008 -0700
+@@ -1204,9 +1204,10 @@
+ /**
+  * workbook_view_new_from_input:
+  * @input: #GsfInput to read data from.
+- * @optional_format: Optional GOFileOpener
+- * @io_context: Optional context to display errors.
+- * @optional_encoding: Optional encoding for GOFileOpener that understand it
++ * @optional_uri: (allow-none): Optional URI
++ * @optional_format: (allow-none): Optional GOFileOpener
++ * @io_context: (allow-none): Optional context to display errors.
++ * @optional_encoding: (allow-none): Optional encoding for GOFileOpener that understand it
+  *
+  * Reads @uri file using given file opener @optional_fmt, or probes for a valid
+  * possibility if @optional_fmt is NULL.  Reports problems to @io_context.
+@@ -1308,9 +1309,9 @@
+ /**
+  * workbook_view_new_from_uri:
+  * @uri: URI for file
+- * @optional_format: Optional GOFileOpener
+- * @io_context: Optional context to display errors.
+- * @optional_encoding: Optional encoding for GOFileOpener that understand it
++ * @optional_format: (allow-none): Optional GOFileOpener
++ * @io_context: (allow-none): Optional context to display errors.
++ * @optional_encoding: (allow-none): Optional encoding for GOFileOpener that understand it
+  *
+  * Reads @uri file using given file opener @optional_fmt, or probes for a valid
+  * possibility if @optional_fmt is NULL.  Reports problems to @io_context.

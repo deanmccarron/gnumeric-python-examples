@@ -1,0 +1,19 @@
+--- gnumeric-1.12.32/src/wbc-gtk.c	2016-05-02 19:28:58.000000000 -0700
++++ gnumeric-patched/src/wbc-gtk.c	2017-03-31 19:32:44.578567511 -0700
+@@ -5136,7 +5136,15 @@
+ }
+ 
+ /******************************************************************************/
+-
++/**
++ * wbc_gtk_new:
++ * @optional_view: (allow-none): #WorkbookView
++ * @optional_wb: (allow-none): #Workbook
++ * @optional_screen: (allow-none): #GdkScreen.
++ * @optional_geometry: (allow-none): string.
++ *
++ * Returns: (transfer none): (allow-none):  the new #WBCGtk or %NULL.
++ **/
+ WBCGtk *
+ wbc_gtk_new (WorkbookView *optional_view,
+ 	     Workbook *optional_wb,
