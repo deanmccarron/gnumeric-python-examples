@@ -68,7 +68,7 @@ def wb_open(filename):
 
 # Will save to existing filename if called with just WorkbookView object, otherwise will save to filename.
 def wb_save(wb, filename=None):
-    global ioc
+    global cc
 
     if filename is None:
         uri = wb.props.uri
@@ -77,7 +77,7 @@ def wb_save(wb, filename=None):
 
     fs = GOffice.FileSaver.for_file_name(uri)
     wbv=Gnm.WorkbookView.new(wb)
-    wbv.save_to_uri(fs, uri, ioc)
+    wbv.save_as(fs, uri, cc)
     wbv = None #Free wbv object
 
     return()
