@@ -77,7 +77,8 @@ def wb_save(wb, filename=None):
 
     fs = GOffice.FileSaver.for_file_name(uri)
     wbv=Gnm.WorkbookView.new(wb)
-    wbv.save_as(fs, uri, cc)
+    if not wbv.save_as(fs, uri, cc):
+        raise IOError("Failed to save workbook")
     wbv = None #Free wbv object
 
     return()
@@ -177,6 +178,10 @@ def main():
     # Whew! All done. Save it out and quit.
 
     wb_save(wb)
+
+    # Cleanup
+    wb = None
+    ioc = None
 
     quit()
 
