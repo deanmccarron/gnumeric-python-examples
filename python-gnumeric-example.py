@@ -158,9 +158,10 @@ def main():
     sheet.cell_set_text(1,row, tdate.strftime("%Y-%m-%d %H:%M:%S"))
 
     # ... then we update with the current USD exchange rate.
-    # We get a little fancy using "locale" to deal with comma separateors in the 
-    # ascii to floating point conversion using atof. (We could just set text in gnumeric as well, but
-    # then we wouldn't be showing off setting floating point values ;-)
+    # We get a little fancy using "locale" to deal with comma separators in the 
+    # ascii to floating point conversion using atof. (We could just set text in 
+    # gnumeric as well, but  then we wouldn't be showing off setting 
+    # floating point values ;-)
 
     import locale
     locale.setlocale(locale.LC_NUMERIC, '')
